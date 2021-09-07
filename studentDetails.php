@@ -87,7 +87,7 @@ if(isset($_GET['page']))
       <td><?php echo $row['stud_gender'] ?></td>
       <td><?php echo $row['stud_mobile'] ?></td>
       <td><img style=" width: 60px;  height: 60px; border-radius: 50px; object-fit: cover;" src="image/<?php echo $row['stud_photo'];?>"></td>
-      <td><a  href="update.php?userid=<?php echo $row["stud_id"];?>" class="btn btn-primary btn-sm">Update</a> <a href="delete.php?userid=<?php echo $row["stud_id"];?>" onclick='return checkdelete()' class="btn btn-danger btn-sm">Delete</a></td>
+      <td><a  href="update.php?userid=<?php echo $row["stud_id"];?>" class="btn btn-primary btn-sm">Update</a> <a href="delete.php?userid=<?php echo $row["stud_id"];?>&photo=<?php echo $row["stud_photo"];?>" onclick='return checkdelete()' class="btn btn-danger btn-sm">Delete</a></td>
     </tr>
 <?php
         }

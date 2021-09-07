@@ -11,11 +11,11 @@ if (isset($_POST['submit'])) {
 
     
     //Photo
-    if(isset($name['photo']))
-    {
-        echo "hiiii";
-        exit;
-    }
+    // if(isset($name['photo']))
+    // {
+    //     echo "hiiii";
+    //     exit;
+    // }
 
     $new_image = $_FILES["photo"]["name"];
     $old_image = $_POST["photo_old"];
@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
     if($new_image !== '')
     {
         $filename = $_FILES["photo"]["name"];
+        unlink("image/".$old_image);
     }
     else{
       $filename = $old_image;
