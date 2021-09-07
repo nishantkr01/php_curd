@@ -14,9 +14,17 @@
         .jumbotron{
             color: #ffff;
             background-color: #000 !important;
+            min-height: 85vh;
           }
           body {
-            background-color: lightblue;
+            background-color: lightblue !important;
+          }
+          .margin-top1{
+            position: absolute;
+            top: 85vh;
+          }
+          .table{
+            width: 50vw !important;
           }
     </style>
   </head>
@@ -26,7 +34,7 @@
         <div class="jumbotron">
         <a class="btn btn-primary form-control" href="registration.php"> Add More Entry </a> <br><br>
             <h3>Student Details</h3>
-            <table class="table table-bordered table-responsive">
+<table class="table table-bordered ">
   <thead>
     <tr>
       <th scope="col">Student ID</th>
@@ -105,7 +113,7 @@ if(isset($_GET['page']))
     }
 </script>
 
-<nav aria-label="Page navigation">
+<nav class="margin-top1" aria-label="Page navigation">
 
 	  <ul class="pagination ">
 	  <?php if($currentPage != $firstPage) { ?>

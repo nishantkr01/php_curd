@@ -7,7 +7,8 @@ if (isset($_POST['submit'])) {
     $dob = $_POST['dob'];
     $gender = $_POST['gender'];
     $stud_mobile = $_POST['stud_mobile'];
-    
+
+
    
 
     //Photo
@@ -32,7 +33,22 @@ if (isset($_POST['submit'])) {
     //Photo End
    
     
-  
+    //validation start ------------------------------------------------ start
+      
+
+      if(!preg_match('/^[6-9]{10}+$/', $stud_mobile)) {
+        ?>
+          <script>alert("Invalid Phone Number !!!")</script>
+        <?php
+      
+      }else{
+      
+      
+      
+    
+      
+      
+    //validation end -----------------------------------------------------end
 
 
         $insertPatient = "insert into stud_regd(stud_regd_date,stud_name, stud_dob, stud_gender, stud_mobile, stud_photo) values('$regDate','$stud_name','$dob','$gender','$stud_mobile','$filename')";
@@ -55,6 +71,7 @@ if (isset($_POST['submit'])) {
             </script>
 <?php
         }
+      }
     }
 else {
     
@@ -87,7 +104,7 @@ else {
            
           }
           body {
-            background-color: lightblue;
+            background-color: lightblue !important;
           }
     </style>
   </head>

@@ -47,7 +47,12 @@ if (isset($_POST['submit'])) {
     //Photo End
    
     
-  
+    if(!preg_match('/^[0-9]{10}+$/', $stud_mobile)) {
+      ?>
+        <script>alert("Invalid Phone Number !!!")</script>
+      <?php
+    
+    }else{
 
 
         $insertPatient = "update stud_regd set stud_regd_date='$regDate',stud_name='$stud_name', stud_dob='$dob', stud_gender='$gender', stud_mobile='$stud_mobile', stud_photo='$filename' where stud_id='$stud_id'";
@@ -70,6 +75,7 @@ if (isset($_POST['submit'])) {
             </script>
 <?php
         }
+      }
     }
 else {
     
@@ -98,7 +104,7 @@ else {
             background-color: #000 !important;
           }
           body {
-            background-color: lightblue;
+            background-color: lightblue !important;
           }
           
     </style>
@@ -118,7 +124,7 @@ else {
       <div class="jumbotron">
 
        <h3>Student Upate</h3>
-        <div  style="height: 100px; width: 100px; border-radius: 50px; border-width: 1px; border-color: 'red'; border-style: solid;">
+        <div  style="height: 100px; width: 100px; border-radius: 50px; border-width: 4px;  border-style: solid;">
             <img style="  width: 100%; height: 100%; border-radius: 50px; overflow: hidden;" src="image/<?php echo $row['stud_photo'];?>">
         </div>
         <br>
