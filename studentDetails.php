@@ -71,7 +71,7 @@ $showRecordPerPage = 5;
 	$getData = "SELECT * FROM stud_regd ORDER BY stud_id OFFSET  $startFrom LIMIT  $showRecordPerPage";
 	$iquery = pg_query($connection, $getData);		
 	?>	
-
+  
 
 
  <!-- $getData = "select * from stud_regd";
